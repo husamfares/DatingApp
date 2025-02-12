@@ -1,10 +1,4 @@
-<h1>{{title}}</h1>
-<ul>
-    @for (user of users; track user.id)
-     {
-        <li>
-            {{user.id}} - {{user.name}}
-        </li>
-     }
-
-</ul>
+<app-nav></app-nav>
+<div class = "container" style ="margin: 100px;">
+    <router-outlet></router-outlet>
+</div>
