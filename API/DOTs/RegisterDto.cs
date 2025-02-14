@@ -5,6 +5,8 @@ namespace API.DOTs;
 public class RegisterDto
 {
     [Required]//what does mean
-    public required string userName { get; set; }
-    public required string password { get; set; }
+    public  string userName { get; set; } = string.Empty;
+    [Required]
+    [StringLength(8, MinimumLength =4)]
+    public  string password { get; set; } = string.Empty;
 }
