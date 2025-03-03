@@ -13,6 +13,8 @@ baseUrl = environment.apiUrl;
 
 currentUser = signal<User | null>(null);
 
+
+
 login(model : any)
 {
   return this.http.post<User>(this.baseUrl + 'account/login' , model).pipe(
@@ -22,6 +24,7 @@ login(model : any)
                 localStorage.setItem('user' , JSON.stringify(user));
                 this.currentUser.set(user);
               }
+          return user;
       })
   )
 }

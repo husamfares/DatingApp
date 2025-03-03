@@ -1,5 +1,5 @@
-export interface User 
-{
-username : string;
-token : string;
-}
+export interface User {
+    userName: string;  // This matches the backend's userName
+    token: string;
+  }
+  
