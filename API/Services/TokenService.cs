@@ -15,8 +15,10 @@ public class TokenService (IConfiguration config): ITokenService
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey));
         // you should install package from nuget to use this methodSymmetricSecurityKey
         var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier , user.Name)
+        { 
+            new Claim(ClaimTypes.NameIdentifier , user.Id.ToString()),
+            new Claim(ClaimTypes.Name , user.Name)
+
         };
 
     var creds = new SigningCredentials(key , SecurityAlgorithms.HmacSha512Signature);
