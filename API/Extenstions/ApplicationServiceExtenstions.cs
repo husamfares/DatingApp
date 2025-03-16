@@ -23,11 +23,17 @@ public static class ApplicationServiceExtenstions
             //It finds the answer in appsettings.json
         });
 
-        services.AddScoped<IUserRepository , UserRepository>();
-        services.AddScoped<IPhotoService , PhotoService>();
+        
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IPhotoService, PhotoService>();
         services.AddScoped<LogUserActivity>();
+        services.AddScoped<ILikedRepository, LikeRepository>();
+
+
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        
         services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
-    return services;
+
+        return services;
     }
 }
